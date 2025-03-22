@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            background-color: cyan; /* Color celeste */
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .nav-panel {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .nav-item {
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 150px;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+        }
+        .nav-item:hover {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Bienvenido al Home</h1>
+    </div>
+
+    <div class="container">
+        <div id="loginForm">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" id="username" placeholder="Nombre de usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button onclick="login()">Ingresar</button>
+        </div>
+
+        <div id="welcomeMessage" class="hidden">
+            <h2 id="welcomeUser "></h2>
+            <div class="nav-panel">
+                <div class="nav-item" onclick="showProfile()">
+                    <h3>Perfil</h3>
+                    <p id="profileName"></p>
+                </div>
+                <div class="nav-item" onclick="showStatistics()">
+                    <h3>Estadística</h3>
+                    <p id="visitCountDisplay"></p>
+                </div>
+                <div class="nav-item" onclick="logout()">
+                    <h3>Cerrar Sesión</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let visitCount = localStorage.getItem('visitCount') ? parseInt(localStorage.getItem('visitCount')) : 0;
+        let currentUser  = '';
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Aquí podrías agregar la lógica de autenticación real
+            if (username && password) {
+                currentUser  = username;
+                visitCount++;
+                localStorage.setItem('visitCount', visitCount);
+                document.getElementById('welcomeUser ').innerText = `Hola, ${username}!`;
+                document.getElementById('profileName').innerText = username;
+                document.getElementById('visitCountDisplay').innerText = `Ingresos: ${visitCount}`;
+                document.getElementById('loginForm').classList.add('hidden');
+                document.getElementById('welcomeMessage').classList.remove('hidden');
+            } else {
+                alert('Por favor, ingresa tu nombre de usuario y contraseña.');
+            }
+        }
+
+        function showProfile() {
+            alert(`Perfil de usuario: ${currentUser }`);
+        }
+
+        function showStatistics() {
+            alert(`Número de ingresos: ${visitCount}`);
+        }
+
+        function logout() {
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('welcomeMessage').classList.add('hidden');
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            currentUser  = '';
+        }
+
+        // Mostrar el contador de visitas al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('visitCountDisplay').innerText = `Ingresos: ${visitCount}`;
+        });
+    </script>
+
+</body>
+</html>
