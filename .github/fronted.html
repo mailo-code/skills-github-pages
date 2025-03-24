@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comidas De Colombia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .login-section {
+            padding: 20px;
+            max-width: 400px;
+            margin: 20px auto;
+            border: 1px solid gray;
+            border-radius: 5px;
+            background-color: rgb(82, 218, 82);
+        }
+
+        .login-section h2 {
+            text-align: center;
+        }
+
+        .login-section label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .login-section input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-section button {
+            width: 100%;
+            padding: 10px;
+            background-color: #005EB8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .info-section {
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            display: none; /* Ocultar inicialmente */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .home-section {
+            display: none; /* Ocultar inicialmente */
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="capturaescudo.png" alt="Amazonia Eterna">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" id="homeLink">Inicio</a></li>
+                <li><a href="#comida" id="comidaLink">Comida</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-section" id="loginSection">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </section>
+
+        <section id="home" class="home-section">
+            <h2>Bienvenido, <span id="userNameDisplay"></span></h2>
+            <p>Aquí puedes encontrar información sobre comida tipica de Colombia.
+                <h3>Platos típicos</h3>
+                Bandeja paisa: Arroz, frijoles, carne molida, chicharrón, huevo frito, plátano maduro, arepa y aguacate.
+                
+                Ajiaco: Sopa de pollo con papas, mazorca y guasca, típica de Bogotá.
+                
+                Sancocho: Caldo con carne, yuca, plátano, papa y cilantro.
+                
+                Arepas: Tortillas de maíz que pueden llevar queso, huevo o carne.
+                
+                Lechona: Cerdo relleno de arroz y arvejas, crocante por fuera.
+                
+                <h3>Dulces y postres</h3>
+                Obleas: Galletas delgadas con arequipe, queso y mermelada.
+                
+                Arroz con leche: Postre cremoso con canela.
+                
+                Bocadillo con queso: Dulce de guayaba con queso campesino.
+                
+                Natilla y buñuelos: Tradicionales en Navidad.
+                
+                <h3>Bebidas populares</h3>
+                Aguapanela: Bebida caliente o fría hecha con panela.
+                
+                Chicha: Bebida fermentada de maíz, tradicional en algunas regiones.
+                
+                Jugo de lulo: Refrescante y ácido, típico de la costa.
+                
+                Chocolate santafereño: Chocolate caliente con queso derretido.
+
+            </p>
+        </section>
+
+        <section id="comida" class="info-section">
+            <h2>Información sobre Comida</h2>
+            <p>La comida es una parte esencial de nuestra vida. Aquí puedes aprender sobre diferentes tipos de cocina, recetas y consejos de alimentación saludable.
+                <h3>Tipos de cocina en Colombia:</h3>
+                Andina: Arepas, ajiaco, tamales y cuchuco.
+                
+                Costeña: Pescados, mariscos, arroz con coco y suero.
+                
+                Pacífica: Encocado de pescado, tapao y arroz atollado.
+                
+                Llanera: Mamona (ternera a la llanera), cachapas y tungos.
+                
+                Amazónica: Pescados de río, casabe y hormigas culonas.
+                
+                <h3>Recetas rápidas</h3>
+                Arepa con queso: Mezcla harina de maíz, agua y sal, forma arepas y ásalas.
+                
+                Calentado paisa: Frijoles y arroz del día anterior con huevo frito.
+                
+                Jugo de lulo: Licúa lulo con agua y azúcar, sirve frío.
+                
+                Hogao: Sofríe cebolla, tomate y ajo, úsalo para acompañar comidas.
+                
+                <h3>Consejos de alimentación saludable</h3>
+                Prefiere arepas de maíz natural en vez de pan blanco.
+                
+                Come más frutas tropicales como guayaba, papaya y maracuyá.
+                
+                Usa aguapanela sin azúcar en vez de refrescos procesados.
+                
+                Reduce las frituras, prefiere asados o sudados.
+                
+                Incluye frijoles y lentejas para una dieta balanceada.
+            </p>
+        </section>
+    </main>
+
+
+    <script>
+        // Manejar el formulario de inicio de sesión
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simular autenticación (solo para demostración)
+            if (username && password) {
+                alert(`Inicio de sesión exitoso.\nUsuario: ${username}\nContraseña: ${password}`);
+
+                // Ocultar el formulario de inicio de sesión
+                document.getElementById('loginSection').style.display = 'none';
+
+                // Mostrar la sección de inicio y actualizar el nombre de usuario
+                document.getElementById('home').style.display = 'block';
+                document.getElementById('userNameDisplay').textContent = username;
+            } else {
+                alert('Por favor, ingresa un usuario y una contraseña válidos.');
+            }
+        });
+
+        // Navegación entre secciones
+        document.getElementById('homeLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('home').style.display = 'block';
+            document.getElementById('comida').style.display = 'none';
+        });
+
+        document.getElementById('comidaLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('comida').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
